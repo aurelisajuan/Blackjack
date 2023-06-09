@@ -18,7 +18,7 @@ using namespace std;
 //User Libraries
 
 //Global Constants - Math/Physics/Chemistry/Conversions ONLY!!!!
-
+const int CHOICE = 3;
 
 
 //Function Prototypes
@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
             case 1: opt1(); break;
             case 2: opt2(); break;
             case 3: opt3(); break;
-            default: def(inp);
+            default: break;
         }
     } while (inp > 0 && inp < 3);
     
@@ -116,8 +116,8 @@ void menu(int& option){ //Menu settings of the game
 }
 
 void display(){ //2 dimensioned arrays
-    const int OPTION = 3;
-    const string menuOpt[OPTION][2] = {
+    
+    string menuOpt[CHOICE][2] = {
         {"1. Rules", "Rules of the Game"},
         {"2. Start", "Start the Game"},
         {"3. Exit ", "Exit the Game"}
@@ -126,17 +126,17 @@ void display(){ //2 dimensioned arrays
     cout << "~~~~~~~~~~~~~~~~~~~~" << endl;
     cout <<endl << "Choose one of the options:" << endl;
     
-    for (int i = 0; i < OPTION; i++){
+    for (int i = 0; i < CHOICE; i++){
         cout << setw(12);
-        if (i == OPTION - 1){
+        if (i == CHOICE - 1){
             cout << setw(12);
         }
         cout << menuOpt[i][0] << "- " << menuOpt[i][1] << endl;
     }
 }
 
-int getN(int defVal){ //Getting the player's answers
-    defVal = 0;
+int getN(int defVal = 0){ //Getting the player's answers
+    
     int inp;
     cin >> inp;
     return (inp != 0) ? inp : defVal;
