@@ -13,13 +13,13 @@
 #include <fstream>      //File Stream Library
 #include <string>       //String Library
 #include <vector>       //Vector Library
+#include <cmath>        //Math Library
 using namespace std;
 
 //User Libraries
 
 //Global Constants - Math/Physics/Chemistry/Conversions ONLY!!!!
 const int CHOICE = 3;
-
 
 //Function Prototypes
 void intro();                   //Opening of the game
